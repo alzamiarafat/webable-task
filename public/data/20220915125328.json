@@ -1,0 +1,16 @@
+{
+  "comments": [
+    {
+      "id": 26,
+      "body": "I am Al Zami arafat!",
+      "postId": 70,
+      "user": {
+        "id": 82,
+        "username": "kogilvy29"
+      }
+    }
+  ],
+  "total": 340,
+  "skip": 0,
+  "limit": 30
+}
