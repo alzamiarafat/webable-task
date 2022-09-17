@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\CommentController;
+use App\Http\Controllers\PostController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -14,6 +15,17 @@ use App\Http\Controllers\CommentController;
 */
 
 Route::get('/', function () {
-    return view('welcome');
-});
+    return redirect()->route('comments');
+})->name('/');
+
+Route::get('/dashboard',  [CommentController::class, "index"])->name('dashboard');
+Route::get('/comments',  [CommentController::class, "index"])->name('comments');
+Route::post('/details',  [CommentController::class, "details"])->name('data.details');
 Route::post('/data-store',  [CommentController::class, "store"])->name('data.store');
+
+Route::get('/posts',  [PostController::class, "index"])->name('posts');
+Route::post('/posts/details',  [PostController::class, "details"])->name('post.details');
+Route::post('/posts/store',  [PostController::class, "store"])->name('post.store');
+
+
+
